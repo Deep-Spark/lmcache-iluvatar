@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=77.0.3,<81.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lmcache-iluvatar"
+version = "0.1.0"
+description = "Non-invasive LMCache vLLM plugin for Iluvatar devices."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Shanghai Iluvatar CoreX Semiconductor Co., Ltd." }]
+dependencies = [
+    "aiofile",
+    "aiofiles",
+    "blake3",
+    "aiohttp",
+    "awscrt",
+    "cufile-python",
+    "fastapi",
+    "httpx",
+    "huggingface_hub>=1.5.0",
+    "msgspec",
+    # CoreX extensions in the release image are built against NumPy 1.x.
+    "numpy==1.26.4",
+    "numba",
+    "nvtx",
+    "opentelemetry-api>=1.20.0,<=1.40.0",
+    "opentelemetry-sdk>=1.20.0",
+    "opentelemetry-exporter-otlp>=1.20.0",
+    "opentelemetry-exporter-prometheus>=0.50b0,<=0.61b0",
+    "prometheus_client>=0.18.0,<=0.24.1",
+    "psutil",
+    "py-cpuinfo",
+    # cupy.testing._random unconditionally imports pytest at module level;
+    # torch._dynamo triggers this via inspect.getmodule() during compilation.
+    "pytest",
+    "pyyaml",
+    "pyzmq>=25.0.0",
+    "redis",
+    "safetensors",
+    "setuptools>=77.0.3,<81.0.0",
+    "setuptools_scm>=8",
+    "sortedcontainers",
+    "uvicorn",
+    "httptools",
+    "transformers>=5.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["lmcache_iluvatar*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests", "benchmark"]
+addopts = "--import-mode=append"

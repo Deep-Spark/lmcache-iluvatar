@@ -1,0 +1,49 @@
+{
+  "cases": [
+    {
+      "name": "p2p_sharing",
+      "script": "p2p_sharing/ci/run.sh",
+      "level": "L0",
+      "gpus": 2,
+      "requires_model": true,
+      "enabled": true,
+      "description": "P2P KV sharing: controller + 2 vLLM instances, cache reuse + log checks"
+    },
+    {
+      "name": "disagg_prefill_mp_smoke",
+      "script": "disagg_prefill_mp/smoke/ci/run.sh",
+      "level": "L0",
+      "gpus": 4,
+      "requires_model": true,
+      "enabled": true,
+      "description": "Shared-storage MP 2P2D smoke — smoke_long_prompt_cache.py + server log checks (Stored, prefix hits)"
+    },
+    {
+      "name": "disagg_prefill_offload_local_tiered",
+      "script": "disagg_prefill/offload/ci/run.sh",
+      "level": "L1",
+      "gpus": 4,
+      "requires_model": true,
+      "enabled": true,
+      "description": "1P1D local-tiered LMCache offload TP2+TP2 Qwen3-8B (no Mooncake): prefiller/decoder/proxy smoke + PD log checks"
+    },
+    {
+      "name": "vllm_agg_offload",
+      "script": "vllm_agg_offload/smoke/ci/run.sh",
+      "level": "L1",
+      "gpus": 2,
+      "requires_model": true,
+      "enabled": true,
+      "description": "Single vLLM agg kv_both + LMCache MP Server: repeated long prompt store + lookup-hit metrics"
+    },
+    {
+      "name": "cacheblend",
+      "script": "cacheblend/ci/run.sh",
+      "level": "L2",
+      "gpus": 1,
+      "requires_model": true,
+      "enabled": true,
+      "description": "CacheBlend shuffle-doc QA: warmup/query benchmark with derangement and TTFT log checks"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Native extension artifacts
+*.so
+*.pyd
+*.dll
+
+# Synced from upstream_pin.json during build_py (SSOT is repo root)
+lmcache_iluvatar/upstream_pin.json
+
+# Packaging and build outputs
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Test, coverage, and analysis caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.hypothesis/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Logs and local runtime output
+*.log
+logs/
+tmp/
+temp/
+
+# CI-downloaded model weights
+weights/
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Trellis local workspace/task state
+.trellis/
+.cursor/
+AGENTS.md
+.claude
+
+docs/study/
+research/

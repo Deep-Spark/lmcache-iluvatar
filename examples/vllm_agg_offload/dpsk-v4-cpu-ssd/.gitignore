@@ -1,0 +1,6 @@
+*.log
+*.pid
+__pycache__/
+.ruff_cache/
+logs/
+results/

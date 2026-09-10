@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+include setup_upstream.py
+include lmcache_iluvatar.pth
+recursive-include csrc *.cpp *.cu *.cuh *.h *.md
+recursive-include docs *.md

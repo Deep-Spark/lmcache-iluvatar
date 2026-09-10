@@ -1,0 +1,8 @@
+{
+  "name": "lmcache-iluvatar",
+  "description": "LMCache plugin for Iluvatar",
+  "version": "0.1.0",
+  "changelog":"./CHANGELOG.md",
+  "dependencies": {"torch"},
+  "requirements": "./requirements.txt"
+}

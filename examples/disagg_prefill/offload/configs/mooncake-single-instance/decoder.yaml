@@ -1,0 +1,28 @@
+chunk_size: 256
+remote_url: "mooncakestore://127.0.0.1:15051/"
+remote_serde: "naive"
+local_cpu: true
+max_local_cpu_size: 8
+numa_mode: "auto"
+
+enable_pd: true
+transfer_channel: "nixl"
+pd_role: "receiver"
+pd_peer_host: "127.0.0.1"
+pd_peer_init_port: [17300, 17301, 17302, 17303]
+pd_peer_alloc_port: [17400, 17401, 17402, 17403]
+pd_buffer_size: 21474836480
+pd_buffer_device: "cpu"
+nixl_backends: [UCX]
+
+extra_config:
+  save_chunk_meta: false
+  local_hostname: "localhost"
+  metadata_server: "http://127.0.0.1:18080/metadata"
+  protocol: "tcp"
+  mooncake_master_server_addr: "127.0.0.1:15051"
+  global_segment_size: 10737418240
+  local_buffer_size: 1073741824
+  transfer_timeout: 1
+  storage_root_dir: "/data/tmp/.cache/"
+  mooncake_prefer_local_alloc: true

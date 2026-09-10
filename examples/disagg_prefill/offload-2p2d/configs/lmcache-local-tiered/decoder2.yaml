@@ -1,0 +1,16 @@
+chunk_size: 256
+local_cpu: true
+max_local_cpu_size: 100
+local_disk: "file:///tmp/.cache/pd-2p2d-d2"
+max_local_disk_size: 0
+use_layerwise: false
+
+enable_pd: true
+transfer_channel: "nixl"
+pd_role: "receiver"
+pd_peer_host: "127.0.0.1"
+pd_peer_init_port: [17302, 17303]
+pd_peer_alloc_port: [17402, 17403]
+pd_buffer_size: 5368709120
+pd_buffer_device: "cuda"
+nixl_backends: [UCX]
